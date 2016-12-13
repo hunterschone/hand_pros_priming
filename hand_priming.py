@@ -74,7 +74,6 @@ def main():
  	rtClock = core.Clock()
  	trial_time = (500+1000+35+50+70+1500)/1000
  	for i,trial in enumerate(conditionMatrix):
- 		print trial
 	 	continueRoutine = True
 		routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine 
 	 	trialClock.reset()
@@ -119,7 +118,6 @@ def main():
 					   accuracy = True
 					else:
 						accuracy = False
-					print "RT :{}, acc:{}".format(rt,accuracy)
 					log_row[4] = "%.4f" % rt
 					log_row[5] = int(accuracy)
 					log_row[6] = response
@@ -128,6 +126,7 @@ def main():
 			if event.getKeys(keyList=['escape','Q','q']):
 				print "q"
 				quit(log)
+		print "{}: {}".format(i,log_row)
 		writer.writerow(log_row)
 		log.flush()
 		if i%30 == 29:
