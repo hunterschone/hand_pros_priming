@@ -12,7 +12,7 @@ response_right = ['l','L']
 RIGHT = 0
 LEFT = 1
 responses = response_right + response_left
-
+LOG_HEADER = ['prime_side','prime_type','target_side','congruency','rt','accuracy','response']
 
 def quit(log):
 	log.close()
@@ -57,7 +57,7 @@ def main():
 
  	log = open(r'test-log.tsv','w')
  	writer = csv.writer(log,delimiter='\t')
- 	writer.writerow(['prime_side','prime_type','target_side','congruency','rt','accuracy','response'])
+ 	writer.writerow(LOG_HEADER)
 	trialClock = core.Clock()
 
  	"""
