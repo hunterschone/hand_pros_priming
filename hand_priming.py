@@ -6,6 +6,7 @@ import itertools
 import numpy as np
 _thisDir = os.path.dirname(os.path.abspath( __file__))
 import csv
+import sys
 TRIAL_REPETITION = 24
 response_left = ['a','A']
 response_right = ['l','L']
@@ -22,6 +23,10 @@ def quit(log):
 def main():
 	win = visual.Window((1000, 1000), allowGUI=False, color=1,
         monitor='testMonitor', winType='pyglet', units='norm' )
+	if len(sys.argv) == 2:
+		participant = sys.argv[1]
+	else:
+		participant = "test"
 
 	breakText = visual.TextStim(win=win, text="Take a break\npress any key to continue",color=u'black')
 	beginningText = visual.TextStim(win=win, text="The experiment will begin shortly",color=u'black')
@@ -57,7 +62,7 @@ def main():
  	conditionMatrix = np.repeat(conditionMatrix, TRIAL_REPETITION, axis=0)
  	np.random.shuffle(conditionMatrix)
 
- 	log = open(r'test-log.tsv','w')
+ 	log = open(r'{0}-log.tsv'.format(participant),'w')
  	writer = csv.writer(log,delimiter='\t')
  	writer.writerow(LOG_HEADER)
 	trialClock = core.Clock()
