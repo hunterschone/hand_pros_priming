@@ -23,7 +23,9 @@ def main():
 	win = visual.Window((1000, 1000), allowGUI=False, color=1,
         monitor='testMonitor', winType='pyglet', units='norm' )
 
-	breakText = visual.TextStim(win=win, text="Take a break and press any key to continue",color=u'black')
+	breakText = visual.TextStim(win=win, text="Take a break\npress any key to continue",color=u'black')
+	beginningText = visual.TextStim(win=win, text="The experiment will begin shortly",color=u'black')
+
  	#    text='+',    font=u'Arial',
  	#    pos=[0, 0], height=1, wrapWidth=None,
  	#    color=u'black', colorSpace='rgb', opacity=1,
@@ -68,7 +70,11 @@ def main():
 	70 ms arrow in disc
 	blank until press or timeout at 1500ms after arrow offset
  	"""
+ 	beginningText.setAutoDraw(True)
+ 	win.flip()
  	core.wait(2)
+ 	beginningText.setAutoDraw(False)
+ 	beginningText.text
  	image_prime = None
  	arrow = None
  	rtClock = core.Clock()
