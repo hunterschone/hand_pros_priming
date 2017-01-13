@@ -31,11 +31,6 @@ def main():
 	breakText = visual.TextStim(win=win, text="Take a break\npress any key to continue",color=u'black')
 	beginningText = visual.TextStim(win=win, text="The experiment will begin shortly",color=u'black')
 
- 	#    text='+',    font=u'Arial',
- 	#    pos=[0, 0], height=1, wrapWidth=None,
- 	#    color=u'black', colorSpace='rgb', opacity=1,
- 	#    depth=0.0)
-	# `donut` has a true hole, using two loops of vertices:
 	# fixation = visual.ShapeStim(win, vertices=donutVert, fillColor='orange', lineWidth=0, size=.75)
 	fixation = visual.Circle(win=win, fillColor='grey', lineColor='grey', radius=0.1)
 	arrowVert = [(-0.4,0.05),(-0.4,-0.05),(-.2,-0.05),(-.2,-0.1),(0,0),(-.2,0.1),(-.2,0.05)]
