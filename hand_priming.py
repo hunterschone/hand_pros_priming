@@ -77,7 +77,7 @@ def main():
  	"""
  	beginningText.setAutoDraw(True)
  	win.flip()
- 	core.wait(2)
+	keys = event.waitKeys(['return'])
  	beginningText.setAutoDraw(False)
  	beginningText.text
  	image_prime = None
