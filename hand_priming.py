@@ -21,12 +21,12 @@ def quit(log):
 
 
 def main():
-	win = visual.Window((1000, 1000), allowGUI=False, color=1,
-        monitor='testMonitor', winType='pyglet', units='norm' )
 	if len(sys.argv) == 2:
 		participant = sys.argv[1]
 	else:
 		participant = "test"
+	# win = visual.Window((1000, 1000), allowGUI=False, color=1, winType='pyglet', units='norm' )
+	win = visual.Window(fullscr=True, allowGUI=False, color=1, winType='pyglet', units='norm' )
 
 	breakText = visual.TextStim(win=win, text="Take a break\npress any key to continue",color=u'black')
 	beginningText = visual.TextStim(win=win, text="The experiment will begin shortly",color=u'black')
